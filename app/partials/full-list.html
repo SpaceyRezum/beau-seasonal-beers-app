@@ -1,0 +1,12 @@
+<div id="beer-list"> 
+    <div class="beer-list-item" ng-repeat="beer in listOfBeers">
+        <div class="beer-title">{{beer.name}}</div>
+            <div class="beer-thumb-img">
+                <a href="#/product/{{beer.id}}">
+                    <img ng-show="beer.image_thumb_url" src="{{beer.image_thumb_url}}" alt="{{beer.name}}">
+                    <img ng-hide="beer.image_thumb_url" src="/style/images/beer-without-image-thumb.png" alt="{{beer.name}}">
+                </a>
+            </div> 
+        </div>
+    </div>
+</div>

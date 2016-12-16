@@ -1,0 +1,32 @@
+<div id="beer-details-container">
+	<img ng-show="beer.image_url === null" src="../../style/images/beer-without-image-full.png" alt="{{beer.name}}">
+	<img ng-hide="beer.image_url === null" src="{{beer.image_url}}" alt="{{beer.name}}">
+	<div class="beer-details">
+		<h2>{{beer.name}}</h2>
+		<p>
+			{{beer.package + ' for $' + (beer.price_in_cents/100)}} 
+			</br>
+			</br>
+			Category: <strong>{{beer.secondary_category}}</strong>
+			</br>
+			</br>
+			<span ng-show="beer.style">Style: {{beer.style}}</br></br></span>
+			<span ng-show="beer.tasting_note">{{beer.tasting_note}}</br></br></span>
+			<span ng-show="beer.serving_suggestion">{{beer.serving_suggestion}}</br></br></span>
+			<a href="#../mainView.html">Back to list of beers</a>
+		</p>
+	</div>
+	<div class="store-locator">
+		<p>Enter a postal code to find nearby </br>stores carrying this product!</p>
+		<input ng-model="postalCode" type="text" placeholder="Ex: M5J2H4">
+		<button ng-click="getListOfStores(postalCode)">Search the area</button>
+		<div class="store-locator-results ng-hide">
+			<div class="store-locator-results-item" ng-repeat="store in listOfStores">
+				<span>{{store.name}}</br></span>
+				<span>{{store.address_line_1}}</br></span>
+				<span ng-show="store.address_line_2">{{store.address_line_2}}</br></span>
+				<span>{{store.city + ' - ' + store.postal_code}}</br></span>
+			</div>
+		</div>
+	</div>
+</div>

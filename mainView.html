@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="seasonalBeerApp">
+<head>
+    <title>Beaus' Seasonal Beers</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Come in and check out Beau's latest seasonal beers available around you!">
+    <link href="style/css/style.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Static page header including a woody decoration bar and a title/logo section -->
+    <header>
+        <div id="decorative-wood"></div>
+        <div id="title">
+            <img class="img-responsive" src="style/images/Beaus_logo.png">            
+            <h1>Beau's Seasonals</h1>
+            <img class="img-responsive" src="style/images/seasonal-beer-logo.png">
+        </div>
+        <h3>Check out Beau's latest seasonal beers and find out where to buy them in your area!</h3>
+    </header>
+
+    <!-- A dynamic spot for angular's different views -->
+    <div id='content-container' ng-view></div>
+
+    <!-- Static footer w/ credits -->
+    <footer id="footer">
+        <div class="col-4">
+            Created by Alexis Bellet
+        </div>
+        <div class="col-4">
+            Twitter: <a href="http://twitter.com/Alexis_Bellet">@Alexis_Bellet</a>
+        </div>
+        <div class="col-4">
+            Site: <a href="http://alexis-bellet.com">www.alexis-bellet.com</a>
+        </div> 
+    </footer>
+                   
+    <!-- Vendor resources from CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- App resources -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/controllers.js"></script>
+    <script src="app/services/seasonalBeerInventory.js"></script>
+</body>
+</html>
