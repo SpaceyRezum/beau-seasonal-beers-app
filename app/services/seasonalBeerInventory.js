@@ -48,19 +48,19 @@ app.service('BeerListService', function($http, $q) {
 
 
 	this.getStoreNearby = function(productID, postalCode) {
-		var request = $.ajax({
+		var request = $http({
 			url: 'https://lcboapi.com/stores?geo=' + postalCode + '&product_id=' + productID 
-			+ '&per_page=5&access_key=' + APIKey,
+			+ '&access_key=' + APIKey,
+			// use of jsonp to by-pass Cross origin issues with ajax call
 			dataType: 'jsonp'
 		});
 		return(request.then(function(response) {
 			// empty the array before repopulating it
 			listOfStores = [];
-			// stores the array of result into a variable and loops over to filter 
-			response.result.forEach(function(store, index) {
-				// if statement to double check that result is indeed a beau's beer
-				listOfStores.push(store);
-			});
+			// stores the first three stores from the results into listOfStores 
+			for (var i = 0; i < 3; i++) {
+				listOfStores.push(response.data.result[i]);
+			};
 			return listOfStores;
 		}, this.errorCallBack));
 	},

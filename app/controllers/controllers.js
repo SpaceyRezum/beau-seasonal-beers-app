@@ -26,12 +26,15 @@ app.controller('beerDetailedInfoController', function ($scope, $routeParams, Bee
             // collects beer details from factory and paste it in the scope
             BeerListService.getBeerDetails(productID).then(function(data) {
                 $scope.beer = data;
-                console.log($scope.beer);
             });
         };
     }
 
     $scope.getListOfStores = function(postalCode) {
+        // empty listOfStores if needed
+        if ($scope.listOfStores.length > 1) {
+            $scope.listOfStores = [];
+        }
         // if the postalCode's format is the same as goodFormat, carries on with function, else tells the user 
         var goodFormat = /\w\d\w\d\w\d/;
         if (goodFormat.test(postalCode)) {
