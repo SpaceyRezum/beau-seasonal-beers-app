@@ -20,9 +20,9 @@ Information about the LCBO API can be found [here](https://lcboapi.com/docs/v1)
 
 ## Future improvement
 
-This app displays a way to use the AngularJS Framework to create multiple-view, API-data fetching web-app. Further implementation could be added, such as:
-	- two navigational button wrapping the beer list to improve the experience of users who would not horizontal scroll naturally
-	- an effort to render the app in a responsive way was made, however, improvements could be brought to further improve the UX on different devices
-	- fetching beer images from beaus.ca as LCBO API does not provide all of them
-	- use of different liquor store API to cover more stores in cities throughout the country (Canada)
-	- if the app were to be used online, a deeper look at performance optimization could benefit the loading speed both for desktop and mobile 
+This app displays a way to use the AngularJS Framework to create multiple-view, API-data fetching web-app. Further implementation could be added, such as: 
+* two navigational button wrapping the beer list to improve the experience of users who would not horizontal scroll naturally
+* an effort to render the app in a responsive way was made, however, improvements could be brought to further improve the UX on different devices
+* fetching beer images from beaus.ca as LCBO API does not provide all of them
+* use of different liquor store API to cover more stores in cities throughout the country (Canada)
+* if the app were to be used online, a deeper look at performance optimization could benefit the loading speed both for desktop and mobile 
