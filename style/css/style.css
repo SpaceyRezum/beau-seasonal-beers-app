@@ -1,12 +1,14 @@
-/* General Styling */
+/* Style Outside Views */
 
 body {
-	background: url('../images/pinstripe-brown.jpg') 0 0 repeat;
+	background: url(../images/pinstripe-brown.jpg) 0 0 repeat;
 	color: #542201;
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
+	align-items: stretch;
 }
 
 h1,
@@ -18,45 +20,50 @@ h5 {
 }
 
 h1 {
-	font-size: 4.5vw;
-	margin: 3vw;
+	font-size: 4.6vmax;
+	margin: 3vmin;
 }
 
 h3 {
 	text-align: center;
-	font-size: 2vw;
-	margin: 0.5vw;
+	font-size: 1.6vmax;
+	margin: 0.5vmin;
+}
+
+header {
+	height: 35%;
 }
 
 #decorative-wood {
-	background: url('../images/top-bar-wood.jpg') 0 0 repeat-x;
-	min-height: 50px;
+	background: url('../images/top-bar-wood.jpg') 0 0 repeat;
+	min-height: 10%;
 }
 
 footer {
-	height: 42px;
+	height: 5%;
 	color: #c7a27e;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	background: url(../images/top-bar-wood.jpg) 0 0 repeat-x;
+	background: url(../images/top-bar-wood.jpg) 0 0 repeat;
 }
 
 footer a {
 	color: #fce7cb;
 }
 
-/* Full List View */
+/* Style in full-list View */
 
 #title {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	margin: 1vmin;
 }
 
 #title img {
-	max-height: 10vw;
+	width: 12%;
 }
 
 .img-responsive {
@@ -65,36 +72,36 @@ footer a {
 }
 
 #content-container {
-	background: url('../images/header.jpg') 0 0 repeat-x;
-	height: 400px;
+	background: url('../images/pinstripe-cream.jpg') 0 0 repeat;
+	height: 60%;
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	justify-content: center;
 }
 
 #beer-list {
 	display: flex;
 	flex-direction: row;
-	align-items: baseline;
+	align-items: center;
 	overflow-y: scroll;
 	max-width: 80%;
 	min-height: 98%;
 }
 
 .beer-list-item {
-	padding-top: 1vw;
-	min-width: 260px;
+	padding-top: 2vmin;
+	min-width: 18vmax;
 	display: flex;
-	margin: 0px 10px;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
 .beer-title {
-	padding-bottom: 10px;
+	padding-bottom: 0.6vmin;
 	text-decoration: underline;
-	font-size: 15px;
+	font-size: 1vmax;
+	text-align: center;
 }
 
 .beer-list-item img {
@@ -102,20 +109,30 @@ footer a {
 	border: solid #6f4529 4px;
 }
 
-/* Beer Details View */
+.beer-thumb-img a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.beer-thumb-img>a>img {
+	width: 90%;
+}
+
+/* Style for Beer Details View */
 
 #beer-details-container {
 	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	align-items: flex-start;
+	align-items: stretch;
 	justify-content: center;
 }
 
 #beer-details-container img {
 	width: 20%;
-	margin-top: 15px;
+	margin: auto;
 	border-radius: 20px;
 	border: solid #6f4529 4px;
 	max-height: 90%;
@@ -123,16 +140,160 @@ footer a {
 
 .beer-details {
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	width: 40%;
-	margin: 1vw;
+	margin: 4vmin 0;
 }
 
 .beer-details h2 {
 	text-decoration: underline;
-	margin-top: 0;
+	font-size: 1.6vmax;
+}
+
+.beer-details p {
+	font-size: 1.2vmax;
+	margin: 0;
 }
 
 .store-locator {
 	text-align: center;
 	width: 30%;
+	margin-top: 4vmin;
+}
+
+.store-locator p {
+	margin: 10px 0;
+	font-size: 1.2vmax;
+}
+
+.store-locator button,
+.store-locator input {
+	font-size: 0.8vmax;
+}
+
+.store-locator-results-item {
+	margin-top: 1.5vmin;
+	font-size: 1vmax;
+}
+
+/* Media Queries */
+
+@media only screen and (max-device-width: 1024px) {
+	/* Style Outside Views */
+	header {
+		height: 25%;
+	}
+
+	h3 {
+		font-size: 2vmax;
+	}
+
+	#content-container {
+		height: 70%;
+	}
+
+	footer div {
+		text-align: center;
+		padding: 0 20px;
+		font-size: 1.6vmax;
+	}
+
+	/* Style in full-list View */
+
+	.beer-title {
+		padding-bottom: 2vmin;
+		text-decoration: underline;
+		font-size: 1.4vmax;
+	}
+
+	/* Style for Beer Details View */
+
+	#beer-details-container img {
+		width: 25%;
+	}
+
+	.beer-details h2 {
+		font-size: 2vmax;
+	}
+
+	.beer-details p,
+	.store-locator p {
+		font-size: 1.6vmax;
+	}
+
+	.store-locator button, .store-locator input {
+		font-size: 1.2vmax;
+	}
+
+	.store-locator-results-item {
+		font-size: 1.4vmax;
+	}
+}
+
+@media only screen and (max-device-width: 450px) {
+	/* Style Outside Views */
+	header {
+		height: 20%;
+	}
+
+	body {
+		height: 100vh;
+	}
+
+	#decorative-wood {
+		min-height: 10px;
+	}
+
+	#content-container {
+		align-items: baseline;
+		height: 75%;
+		padding-bottom: 20px;
+		overflow-x: scroll;
+	}
+
+	/* Style in full-list View */
+
+	#beer-list {
+		flex-direction: column;
+		overflow-x: scroll;
+	}
+
+	.beer-title {
+		font-size: 2.2vmax;
+	}
+
+	/* Style for Beer Details View */
+
+
+	.beer-details {
+		width: 50%;
+		margin: auto;
+	}
+
+	.beer-details p {
+		font-size: 1.4vmax;
+	}
+
+	#beer-details-container {
+		padding: 1vmin 0;
+		align-items: baseline;
+		flex-wrap: wrap;
+	}
+
+	#beer-details-container img {
+		width: 40%;
+	}
+
+	.store-locator {
+		margin: 0;
+		width: 90%;
+	}
+	
+	.store-locator-results {
+		height: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
 }

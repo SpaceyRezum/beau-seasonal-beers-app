@@ -55,14 +55,22 @@ app.service('BeerListService', function($http, $q) {
 			dataType: 'jsonp'
 		});
 		return(request.then(function(response) {
+			// limit the result list to three store or less
+			if (response.data.result.length === 0) {
+				alert('This product cannot be found in your area,\n it could be out of stock');
+				return;
+			}
+			var loopLimit = Math.min(response.data.result.length, 3);
 			// empty the array before repopulating it
 			listOfStores = [];
 			// stores the first three stores from the results into listOfStores 
-			for (var i = 0; i < 3; i++) {
+			for (var i = 0; i < loopLimit; i++) {
 				listOfStores.push(response.data.result[i]);
 			};
 			return listOfStores;
-		}, this.errorCallBack));
+		}, function(response) {
+			alert('Sorry, no result were found with the current request, please try another one');
+		}));
 	},
 
 

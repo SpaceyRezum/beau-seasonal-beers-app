@@ -20,12 +20,12 @@
 		<p>Enter a postal code to find nearby </br>stores carrying this product!</p>
 		<input ng-model="postalCode" type="text" placeholder="Ex: M5J2H4">
 		<button ng-click="getListOfStores(postalCode)">Search the area</button>
-		<div ng-show="listOfStores.length > 1" class="store-locator-results">
+		<div class="store-locator-results">
 			<div class="store-locator-results-item" ng-repeat="store in listOfStores">
 				<span>LCBO - {{store.name}}</br></span>
 				<span>{{store.address_line_1}}</br></span>
-				<span ng-show="store.address_line_2">{{store.address_line_2}}</br></span>
-				<span>{{store.city + ' - ' + store.postal_code}}</span>
+				<span>{{store.city + ' - ' + store.postal_code}}</span></br>
+				<a target="_blank" href="https://www.google.com/maps/dir//{{store.address_line_1 + '+' + store.city + '+' + store.postal_code}}">Get directions</a>
 			</div>
 		</div>
 	</div>

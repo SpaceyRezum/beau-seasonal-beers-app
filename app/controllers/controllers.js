@@ -1,4 +1,5 @@
-app.controller('beerInventoryController', function($window, $scope, BeerListService) {
+app.controller('beerInventoryController', function($scope, $location, $anchorScroll, BeerListService) {
+    $scope.location = 1;
 
 	init();
 
@@ -8,6 +9,7 @@ app.controller('beerInventoryController', function($window, $scope, BeerListServ
 	    	$scope.listOfBeers = data;
 	    });
 	}
+
 });
 
 //This controller retrieves data from the BeerListService and associates it with the $scope
@@ -44,7 +46,6 @@ app.controller('beerDetailedInfoController', function ($scope, $routeParams, Bee
                 BeerListService.getStoreNearby(productID, postalCode).then(function(data) {
                     $scope.listOfStores = data;
                     // toggles the ng-hide class to make the store-locator-results visible
-                    $('.store-locator-results').toggleClass('ng-hide');
                     console.log($scope.listOfStores);
                 });
             };
