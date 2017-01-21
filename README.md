@@ -10,7 +10,7 @@ The app is coded in Javascript using the AngularJS framework & the jQuery librar
 
 ## Launch & Usage
 
-Since the AJAX calls to the LCBO API are using an API Key, it might be necessary to view the final project on a local server (to avoid Cross-Origin restriction issues). 
+Here's a [live version of the app on my github pages](https://spaceyrezum.github.io/seasonal-beer-app/index.html#/)
 
 The app usage is pretty simple, a list of seasonal beer is displayed as soon as the user launches the mainView.html page. The list can be navigated horizontally using scroll functions and any beer image can be clicked to retrieve the product details. On the detail page, entering a canadian postal code will display a maximum of 3 of the closest liquor store currently carrying the product.  
 
